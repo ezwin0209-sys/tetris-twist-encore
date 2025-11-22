@@ -60,11 +60,14 @@ export function GameBoard({ gameState }: GameBoardProps) {
                   key={x}
                   className={cn(
                     "w-7 h-7 rounded-sm transition-all duration-150",
-                    !cell && "bg-game-grid",
-                    cell && !isGhost && `bg-${color}`,
-                    cell && !isGhost && "shadow-[0_0_8px_rgba(0,0,0,0.3)] border border-white/20",
-                    isGhost && `bg-${color} opacity-20`
+                    !cell && "bg-game-grid"
                   )}
+                  style={{
+                    backgroundColor: cell && !isGhost ? `hsl(var(--${color}))` : undefined,
+                    opacity: isGhost ? 0.2 : 1,
+                    boxShadow: cell && !isGhost ? '0 0 8px rgba(0,0,0,0.3)' : undefined,
+                    border: cell && !isGhost ? '1px solid rgba(255,255,255,0.2)' : undefined,
+                  }}
                 />
               );
             })}
