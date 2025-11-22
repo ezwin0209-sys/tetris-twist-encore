@@ -28,8 +28,13 @@ export function NextPieces({ pieces }: NextPiecesProps) {
                         key={x}
                         className={cn(
                           "w-4 h-4 rounded-sm",
-                          cell ? `bg-${color} shadow-sm border border-white/20` : "opacity-0"
+                          !cell && "opacity-0"
                         )}
+                        style={{
+                          backgroundColor: cell ? `hsl(var(--${color}))` : undefined,
+                          boxShadow: cell ? '0 1px 2px rgba(0,0,0,0.1)' : undefined,
+                          border: cell ? '1px solid rgba(255,255,255,0.2)' : undefined,
+                        }}
                       />
                     ))}
                   </div>

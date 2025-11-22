@@ -4,6 +4,7 @@ import { NextPieces } from '@/components/tetris/NextPieces';
 import { ScorePanel } from '@/components/tetris/ScorePanel';
 import { EventModal } from '@/components/tetris/EventModal';
 import { GameOverModal } from '@/components/tetris/GameOverModal';
+import { ThemeToggle } from '@/components/tetris/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 
@@ -32,6 +33,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
+      <ThemeToggle />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
